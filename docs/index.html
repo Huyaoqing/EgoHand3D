@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EgoHand3D</title>
+    <meta
+      name="description"
+      content="EgoHand3D is an egocentric hand reconstruction, export, visualization, evaluation, and training workflow toolkit."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">EgoHand3D</a>
+      <nav aria-label="Primary navigation">
+        <a href="#features">Features</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#quickstart">Quick Start</a>
+        <a href="#release">Release Notes</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-image" src="assets/egohand3d-overview.png" alt="" />
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Egocentric Hand Reconstruction Toolkit</p>
+          <h1 id="hero-title">EgoHand3D</h1>
+          <p class="hero-copy">
+            A practical command-line toolkit for first-person hand detection, 2D and
+            3D joint export, MANO parameter export, mesh reconstruction, video
+            visualization, evaluation, reporting, and training workflow management.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#quickstart">Run The CLI</a>
+            <a class="button secondary" href="../README.md">Read README</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Capabilities</p>
+          <h2>From input frames to structured hand outputs</h2>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <h3>2D And 3D Exports</h3>
+            <p>
+              Export projected 2D hand joints, camera-space 3D joints, root-space
+              joints, depth values, and camera metadata.
+            </p>
+          </article>
+          <article>
+            <h3>MANO And Mesh Files</h3>
+            <p>
+              Save MANO pose, shape, and camera parameters, plus OBJ mesh outputs
+              for downstream analysis or visualization.
+            </p>
+          </article>
+          <article>
+            <h3>Video Processing</h3>
+            <p>
+              Run frame-level hand detection, keypoint export, overlay drawing, and
+              output-video generation on first-person recordings.
+            </p>
+          </article>
+          <article>
+            <h3>Evaluation And Reports</h3>
+            <p>
+              Evaluate HOI4D-style 2D keypoints and generate JSON, CSV, Markdown,
+              NPY, TXT, and overlay artifacts.
+            </p>
+          </article>
+          <article>
+            <h3>Manifests</h3>
+            <p>
+              Build image and video processing manifests that match media files,
+              prediction files, and labels.
+            </p>
+          </article>
+          <article>
+            <h3>Merged Indexes</h3>
+            <p>
+              Combine 2D, 3D, MANO, mesh, overlay, NPY, and NPZ files into one
+              sample-level index.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="workflow" class="section split">
+        <div>
+          <p class="eyebrow">Workflow</p>
+          <h2>A compact pipeline around the reconstruction runtime</h2>
+          <p>
+            EgoHand3D keeps model assets external and focuses on the engineering
+            layer around them: input collection, detection result organization,
+            coordinate recovery, export formatting, visualization, evaluation, and
+            report generation.
+          </p>
+        </div>
+        <ol class="workflow-list">
+          <li><span>1</span>Collect images or video frames.</li>
+          <li><span>2</span>Detect hand regions and handedness.</li>
+          <li><span>3</span>Recover 2D joints, 3D joints, MANO parameters, and meshes.</li>
+          <li><span>4</span>Export structured files and visual reports.</li>
+        </ol>
+      </section>
+
+      <section id="quickstart" class="section command-section">
+        <div class="section-heading">
+          <p class="eyebrow">Quick Start</p>
+          <h2>Unified commands for common tasks</h2>
+        </div>
+        <div class="command-grid">
+          <div>
+            <h3>3D joints</h3>
+            <pre><code>python egohand3d_cli.py export-3d \
+  --img_folder /path/to/images \
+  --out_folder outputs/3d_joints</code></pre>
+          </div>
+          <div>
+            <h3>MANO parameters</h3>
+            <pre><code>python egohand3d_cli.py export-mano \
+  --img_folder /path/to/images \
+  --out_folder outputs/mano_params</code></pre>
+          </div>
+          <div>
+            <h3>Result manifest</h3>
+            <pre><code>python egohand3d_cli.py manifest \
+  --image_dir /path/to/images \
+  --pred_dir outputs/2d_joints \
+  --out outputs/manifest.json</code></pre>
+          </div>
+          <div>
+            <h3>Merged index</h3>
+            <pre><code>python egohand3d_cli.py merge \
+  --joints2d_dir outputs/2d_joints \
+  --joints3d_dir outputs/3d_joints \
+  --mano_dir outputs/mano_params \
+  --out outputs/merged_exports.json</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="release" class="section split release">
+        <div>
+          <p class="eyebrow">Release Boundary</p>
+          <h2>Public code, private assets</h2>
+          <p>
+            The public repository should publish the application-layer code,
+            documentation, and this project website. Model weights, MANO data,
+            datasets, uncertain-license example photos, generated outputs, and
+            software-copyright registration drafts should remain private unless
+            their licenses and disclosure requirements are clear.
+          </p>
+        </div>
+        <div class="release-links" aria-label="Release documents">
+          <a href="../GITHUB_PUBLISHING.md">GitHub Publishing Guide</a>
+          <a href="../THIRD_PARTY_NOTICES.md">Third-Party Notices</a>
+          <a href="../README.md">Repository README</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>EgoHand3D</span>
+      <span>Application-layer source prepared for V1.0 registration: 3214 Python lines.</span>
+    </footer>
+  </body>
+</html>

@@ -146,9 +146,11 @@ python egohand3d_cli.py merge \
 ## Public Sample Outputs
 
 Every command documented in this README has a matching lightweight result under
-[sample_outputs](sample_outputs). These files use a synthetic public frame and
-schema-valid illustrative values, so the repository can show output formats
-without publishing private datasets, model weights, or local experiment images.
+[sample_outputs](sample_outputs). The image artifacts use the first-person
+example frame and overlays from
+[examples/egocentric_sequence](examples/egocentric_sequence), while the compact
+JSON/CSV/OBJ files show the expected output schemas without publishing videos,
+model weights, or full local experiment dumps.
 
 | Command | Example outputs on GitHub |
 | --- | --- |

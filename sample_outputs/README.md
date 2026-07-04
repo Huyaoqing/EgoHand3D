@@ -1,12 +1,12 @@
 # Public Sample Outputs
 
-This directory contains small, public-safe sample artifacts for every EgoHand3D
-command shown in the main README.
+This directory contains small sample artifacts for every EgoHand3D command shown
+in the main README.
 
-The sample input frame is synthetic and does not come from HOI4D or any private
-dataset. Numeric predictions are schema-valid illustrative values, intended to
-show output formats and file layout. Full model outputs require the external
-runtime assets described in the main README.
+The image artifacts use first-person frames and overlays from
+`../examples/egocentric_sequence`. Some compact numeric files are schema-valid
+illustrative values intended to show output formats and file layout. Full model
+outputs require the external runtime assets described in the main README.
 
 ## Command To Output Map
 
@@ -29,8 +29,8 @@ runtime assets described in the main README.
 
 ## Included Demo Input
 
-- `assets/sample_frame.png`: synthetic public-safe input frame used by the
-  example artifacts.
+- `assets/sample_frame.png`: first-person input frame used by the example
+  artifacts.
 - `checksums.csv`: SHA-256 checksums for all sample files.
 
 For real first-person example frames and matching outputs, see

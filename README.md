@@ -27,6 +27,7 @@ tools/                     reporting, video, evaluation, validation, and merge t
 scripts/                   common inference and training shell commands
 docs/                      GitHub Pages project website
 results/hoi4d/             compact HOI4D evaluation summaries and checkpoint manifest
+sample_outputs/            public-safe example outputs for every documented command
 detect_and_reconstruct.py  image reconstruction and mesh export entry point
 export_2d_joints.py        2D joint export entry point
 export_3d_joints.py        3D joint export entry point
@@ -139,6 +140,32 @@ python egohand3d_cli.py merge \
   --mesh_dir outputs/demo_mesh \
   --out outputs/merged_exports.json
 ```
+
+## Public Sample Outputs
+
+Every command documented in this README has a matching lightweight result under
+[sample_outputs](sample_outputs). These files use a synthetic public frame and
+schema-valid illustrative values, so the repository can show output formats
+without publishing private datasets, model weights, or local experiment images.
+
+| Command | Example outputs on GitHub |
+| --- | --- |
+| `python egohand3d_cli.py validate ...` | [validate_setup.json](sample_outputs/validate/validate_setup.json), [validate_setup.md](sample_outputs/validate/validate_setup.md) |
+| `python egohand3d_cli.py reconstruct ...` | [sample_frame_0.obj](sample_outputs/reconstruct/sample_frame_0.obj), [sample_frame_overlay.png](sample_outputs/reconstruct/sample_frame_overlay.png), [summary.json](sample_outputs/reconstruct/summary.json) |
+| `python egohand3d_cli.py export-2d ...` | [sample_frame_kpts2d.json](sample_outputs/2d_joints/sample_frame_kpts2d.json), [records.jsonl](sample_outputs/2d_joints/records.jsonl), [summary.json](sample_outputs/2d_joints/summary.json) |
+| `python egohand3d_cli.py export-3d ...` | [sample_frame_joints3d.json](sample_outputs/3d_joints/sample_frame_joints3d.json), [records.jsonl](sample_outputs/3d_joints/records.jsonl), [summary.json](sample_outputs/3d_joints/summary.json) |
+| `python egohand3d_cli.py export-mano ...` | [sample_frame_mano.json](sample_outputs/mano_params/sample_frame_mano.json), [summary.json](sample_outputs/mano_params/summary.json) |
+| `python egohand3d_cli.py video ...` | [frame_000000.json](sample_outputs/video_hands/jsons/frame_000000.json), [frame_000000.png](sample_outputs/video_hands/overlay_frames/frame_000000.png), [summary.json](sample_outputs/video_hands/summary.json) |
+| `python egohand3d_cli.py evaluate ...` | [summary.json](sample_outputs/evaluate/summary.json), [summary.csv](sample_outputs/evaluate/summary.csv), [details.csv](sample_outputs/evaluate/details.csv), [sample_frame_eval_overlay.png](sample_outputs/evaluate/overlays/sample_frame_eval_overlay.png) |
+| `python egohand3d_cli.py report ...` | [report.md](sample_outputs/report/report.md), [report.json](sample_outputs/report/report.json), [json_files.csv](sample_outputs/report/json_files.csv) |
+| `python egohand3d_cli.py manifest ...` | [manifest.json](sample_outputs/manifest/manifest.json), [manifest.csv](sample_outputs/manifest/manifest.csv), [manifest.md](sample_outputs/manifest/manifest.md) |
+| `python egohand3d_cli.py merge ...` | [merged_exports.json](sample_outputs/merged_exports/merged_exports.json), [merged_exports.csv](sample_outputs/merged_exports/merged_exports.csv), [merged_exports.md](sample_outputs/merged_exports/merged_exports.md) |
+| `python egohand3d_cli.py visualize ...` | [sample_frame_overlay.png](sample_outputs/visualize/sample_frame_overlay.png), [summary.json](sample_outputs/visualize/summary.json) |
+| `bash scripts/train_hoi4d_clean_4gpu.sh` and smoke training | [smoke_train_log.txt](sample_outputs/training/smoke_train_log.txt), [expected_training_outputs.json](sample_outputs/training/expected_training_outputs.json) |
+
+The complete command-to-output index is in
+[sample_outputs/README.md](sample_outputs/README.md). File hashes are listed in
+[sample_outputs/checksums.csv](sample_outputs/checksums.csv).
 
 ## Unified CLI
 

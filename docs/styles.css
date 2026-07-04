@@ -189,7 +189,8 @@ h3 {
 }
 
 .feature-grid,
-.command-grid {
+.command-grid,
+.output-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
@@ -202,6 +203,27 @@ h3 {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
+}
+
+.output-grid a {
+  display: grid;
+  gap: 8px;
+  min-height: 118px;
+  padding: 22px;
+  color: var(--muted);
+  text-decoration: none;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.output-grid a:hover {
+  border-color: var(--teal);
+}
+
+.output-grid span {
+  color: var(--ink);
+  font-weight: 850;
 }
 
 .feature-grid p,
@@ -326,6 +348,7 @@ footer {
 
   .feature-grid,
   .command-grid,
+  .output-grid,
   .split {
     grid-template-columns: 1fr;
   }

@@ -32,3 +32,6 @@ runtime assets described in the main README.
 - `assets/sample_frame.png`: synthetic public-safe input frame used by the
   example artifacts.
 - `checksums.csv`: SHA-256 checksums for all sample files.
+
+For real first-person example frames and matching outputs, see
+`../examples/egocentric_sequence`.

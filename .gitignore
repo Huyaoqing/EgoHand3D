@@ -32,6 +32,8 @@ mano_data/
 
 # Example photos are not guaranteed to be redistribution-safe.
 examples/images/
+!examples/egocentric_sequence/outputs/
+!examples/egocentric_sequence/outputs/**
 
 # Private software-copyright registration materials and official templates.
 软著申请材料_*/

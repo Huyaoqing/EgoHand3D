@@ -26,6 +26,8 @@ egohand3d/                 application-layer inference, IO, and visualization he
 tools/                     reporting, video, evaluation, validation, and merge tools
 scripts/                   common inference and training shell commands
 docs/                      GitHub Pages project website
+examples/egocentric_sequence/
+                           first-person input frames and matching output files
 results/hoi4d/             compact HOI4D evaluation summaries and checkpoint manifest
 sample_outputs/            public-safe example outputs for every documented command
 detect_and_reconstruct.py  image reconstruction and mesh export entry point
@@ -166,6 +168,27 @@ without publishing private datasets, model weights, or local experiment images.
 The complete command-to-output index is in
 [sample_outputs/README.md](sample_outputs/README.md). File hashes are listed in
 [sample_outputs/checksums.csv](sample_outputs/checksums.csv).
+
+## First-Person Examples
+
+A real egocentric sample package is included in
+[examples/egocentric_sequence](examples/egocentric_sequence). It contains three
+`cam0` frames from `../WiLoR/20260604_203918_008` and their matching 2D keypoint
+JSON files, raw detection JSON files, 3D trajectory samples, diagnostic overlay
+images, mesh overlay previews, manifest files, and checksums.
+
+| Example artifact | Files |
+| --- | --- |
+| First-person input frames | [inputs/cam0](examples/egocentric_sequence/inputs/cam0) |
+| 2D keypoint outputs | [outputs/2d_joints/cam0](examples/egocentric_sequence/outputs/2d_joints/cam0) |
+| Raw detection outputs | [outputs/detections/cam0](examples/egocentric_sequence/outputs/detections/cam0) |
+| 3D trajectory samples | [outputs/3d_trajectory](examples/egocentric_sequence/outputs/3d_trajectory) |
+| Overlay result images | [outputs/overlays/cam0](examples/egocentric_sequence/outputs/overlays/cam0) |
+| Mesh overlay previews | [outputs/mesh_previews/cam0](examples/egocentric_sequence/outputs/mesh_previews/cam0) |
+| Manifest and checksums | [manifest.json](examples/egocentric_sequence/manifest.json), [checksums.csv](examples/egocentric_sequence/checksums.csv) |
+
+The original video, full trajectory arrays, checkpoints, datasets, and MANO
+assets are not included.
 
 ## Unified CLI
 

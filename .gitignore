@@ -12,6 +12,7 @@ clash.log
 *.log
 *.tmp
 *.bak
+!results/**/*.log
 
 # External assets. Keep these out of a public repo unless their license permits redistribution.
 wilor

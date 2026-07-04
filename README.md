@@ -26,6 +26,7 @@ egohand3d/                 application-layer inference, IO, and visualization he
 tools/                     reporting, video, evaluation, validation, and merge tools
 scripts/                   common inference and training shell commands
 docs/                      GitHub Pages project website
+results/hoi4d/             compact HOI4D evaluation summaries and checkpoint manifest
 detect_and_reconstruct.py  image reconstruction and mesh export entry point
 export_2d_joints.py        2D joint export entry point
 export_3d_joints.py        3D joint export entry point
@@ -211,3 +212,11 @@ The public repository can still describe the claim boundary:
 See [GITHUB_PUBLISHING.md](GITHUB_PUBLISHING.md) and
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) before making the repository
 public.
+
+## HOI4D Results
+
+Compact HOI4D result summaries and the local checkpoint manifest are included in
+[results/hoi4d](results/hoi4d). Full checkpoint files are not stored directly in
+Git because the discovered HOI4D checkpoints are approximately 7.2 GiB each.
+Use GitHub Releases with split assets, Hugging Face, or object storage for the
+full weights.
